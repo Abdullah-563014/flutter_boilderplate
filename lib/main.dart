@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:test_app/pages/splash_page/SplashPage.dart';
+import 'package:test_app/pages/splash_page/splash_page.dart';
+import 'package:test_app/routes/app_pages.dart';
+import 'package:test_app/routes/app_routes.dart';
+import 'package:test_app/theme/app_theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,12 +17,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
 
     return GetMaterialApp(
-      title: 'Flutter Demo App',
+      title: 'Flutter Boilerplate',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.orange,
-      ),
-      home: const SplashPage(),
+      initialRoute: AppRoutes.SplashScreen,
+      getPages: AppPages.list,
+      theme: appTheme(context)
     );
   }
 }
